@@ -16,7 +16,7 @@ infoGain = 0
 datasetEntropy = 0
 
 def readFile():
-	with open(os.path.join(__location__, 'data.txt')) as dataFile:
+	with open(os.path.join(__location__, '2-data-1.txt')) as dataFile:
 		for line in dataFile:
 			fileInputList.append(list())
 			fileInputList[len(fileInputList) - 1] = line.replace('\n', '').replace(' ', '').lower().split(',')
@@ -73,8 +73,9 @@ for i in entropyList:
     infoGain = datasetEntropy - i
     infoGainList.append(infoGain)
 
+print("34-36")
 infoGainList.sort(reverse=True)
-print(infoGainList)
+print("(IG " + str(round(infoGainList[0],3)) + ")")
 
 
 with open('result.txt', 'w') as output:
